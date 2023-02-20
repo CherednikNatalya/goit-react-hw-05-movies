@@ -1,10 +1,15 @@
-import { NavLink } from "react-router-dom";
-const Home =({trendingList}) =>{
+import { useState } from "react";
+import {Section, TrendingList } from ''
+
+const Home =() =>{
+const[treadingList, setTreadingList] = useState()
 
 return (
-  <NavLink>
-trendingList.title.map()
-  </NavLink>
+  <>
+ <Section tittle ='Trending Today'>
+  <TrendingList treadingList={treadingList}/>
+</Section>
+</>
 )
 }
 

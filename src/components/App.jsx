@@ -11,8 +11,7 @@ import Reviews from '../pages/MovieDetails/Reviews/Reviews'
 
 
 export const App = () => {
-  return (
-    
+  return (  
 <Routes>
   <Route path='/' element={<Navigation/>}>
   <Route index element={<Home />}/>

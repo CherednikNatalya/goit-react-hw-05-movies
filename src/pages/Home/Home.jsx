@@ -10,12 +10,18 @@ const Home =() =>{
 const[treadingList, setTreadingList] = useState([])
 const[status, setStatus] = useState(STATUS.idle)
 
+
+
 useEffect(()=>{
   setStatus(STATUS.pending)
-  getTrending().then(content => {
-    setTreadingList(content.data.results)
-    setStatus(STATUS.success)})
-    .catch(error => setStatus(STATUS.error))
+
+getTrending()
+  .then(data => {
+    setTreadingList(data.results)
+    console.log(treadingList)
+    setStatus(STATUS.success)
+  })
+  .catch(error => setStatus(STATUS.error))
 },[])
 
 

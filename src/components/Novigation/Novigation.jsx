@@ -1,24 +1,3 @@
-// import { NavLink } from 'react-router-dom';
-
-// const getActiveClassName = ({ isActive }) => {
-//   return isActive ? 'btn nav-btn btn-light active' : 'btn nav-btn btn-light';
-// };
-
-// const Navigation = () => {
-//   return (
-//     <div className="d-flex flex-column justify-content-between h-100">
-     
-//         <NavLink to="/" className={getActiveClassName}>
-//           Home
-//         </NavLink>
-
-//         <NavLink to="/movies" className={getActiveClassName}>
-//           Movies
-//         </NavLink>
-//     </div>
-//   );
-// };
-
 
 // import { Suspense } from "react";
 // import { Outlet } from "react-router-dom";
@@ -31,10 +10,10 @@ import React from 'react';
       <Header>
         
         <nav>
-          <Link to="/" end>
+          <Link to="" end>
             Home
           </Link>
-          <Link to="/movies">Movies</Link>
+          <Link to="movies">Movies</Link>
           
         </nav>
       </Header>

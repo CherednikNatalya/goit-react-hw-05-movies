@@ -25,7 +25,7 @@ export const App = () => {
       //   pauseOnHover
       //   theme="colored"
       // />
-      <BrowserRouter basename="/goit-react-hw-05-movies">
+      <BrowserRouter basename="goit-react-hw-05-movies">
 <Routes>
   <Route path='' element={<Navigation/>}>
   <Route index element={<Home />}/>

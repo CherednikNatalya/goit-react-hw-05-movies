@@ -23,6 +23,7 @@
 // import { Suspense } from "react";
 // import { Outlet } from "react-router-dom";
 import { Container, Header,  Link } from '../Novigation/Novigation.styled';
+import React from 'react';
 
  const Navigation = () => {
   return (

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 // import {Section, TrendingList } from '../Home/Home.styled.jsx'
-import {getTrending} from '../../helpers/FetchData'
+import getTrending from '../../helpers/FetchData'
 import {STATUS} from '../../helpers/Status'
 import Loader from '../../components/Loader/Loader'
 import React from 'react';
+import Section from '../../components/Section/Section'
+import TrendingList from '../../components/TrendingList/TrendingList'
 
 const Home =() =>{
   
@@ -27,7 +29,7 @@ getTrending()
 
 return (
   <>
- <Section tittle ='Trending Today'>
+ <Section tittle ={'Trending Today'}>
  {status === STATUS.pending && <Loader/>}
  {status===STATUS.success && <TrendingList treadingList={treadingList}/> 
 }

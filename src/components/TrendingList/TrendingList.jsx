@@ -1,7 +1,7 @@
 // import {Link} from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import { List, Item, LinkItem } from '../TrendingList/TrendingList.styled';
-
+import React from 'react';
 
 const TrendingList =({treadingList}) => {
 return(
@@ -11,7 +11,7 @@ return(
                     <Item key={id}>
                         <LinkItem
                             to={`/movies/${id}`}
-                            state={{ from: location }}
+                            // state={{ from: location }}
                         >
                             {title || name}
                         </LinkItem>

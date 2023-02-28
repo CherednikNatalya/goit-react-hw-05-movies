@@ -1,6 +1,6 @@
 // import {Link} from 'react-router-dom';
 // import PropTypes from 'prop-types';
-import { List, Item, LinkItem } from './MovieList.styled';
+import { List, Item, LinkItem } from '../TrendingList/TrendingList.styled';
 
 
 const TrendingList =({treadingList}) => {

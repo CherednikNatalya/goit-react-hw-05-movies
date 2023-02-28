@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import {Section, TrendingList } from '../Home/Home.styled.jsx'
-import {getTrending }from '../../helpers/FetchData'
+// import {Section, TrendingList } from '../Home/Home.styled.jsx'
+import {getTrending} from '../../helpers/FetchData'
 import {STATUS} from '../../helpers/Status'
-import {Loader} from '../../components/Loader/Loader'
+import Loader from '../../components/Loader/Loader'
 import React from 'react';
 
 const Home =() =>{

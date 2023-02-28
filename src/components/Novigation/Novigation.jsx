@@ -10,9 +10,7 @@ import React from 'react';
       <Header>
         
         <nav>
-          <Link to="" end>
-            Home
-          </Link>
+          <Link to="" end>Home</Link>
           <Link to="movies">Movies</Link>
           
         </nav>

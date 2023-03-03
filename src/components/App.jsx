@@ -16,9 +16,10 @@ export const App = () => {
     
       
 <Suspense fallback={<Loader />}>
+<Navigation>
 <Routes>
-  <Route path='/' element={<Navigation/>}>
-  <Route index element={<Home />}/>
+  <Route path='' element={<Home />}>
+
   <Route path="movies" element={<Movies/>}/>
   <Route path="movies/:movieId" element={<MovieDetails/>}>
     
@@ -28,6 +29,7 @@ export const App = () => {
    </Route>
   </Route>
 </Routes>
+</Navigation>
 </Suspense>
 
 

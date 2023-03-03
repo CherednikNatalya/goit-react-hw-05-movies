@@ -5,7 +5,7 @@ import Section from '../../components/Section/Section'
 import TrendingList from '../../components/TrendingList/TrendingList'
 import {STATUS} from '../../helpers/Status'
 
-const { onMovieTrending} = require('Api');
+import  { onMovieTrending} from '../../API/API'
 
 
 
@@ -26,6 +26,7 @@ const[status, setStatus] = useState(STATUS.idle)
 //   })
 //   .catch(error => setStatus(STATUS.error))
 // },[])
+
 useEffect(() => {
   onMovieTrending().then(res => {
     setTreadingList(res.results);

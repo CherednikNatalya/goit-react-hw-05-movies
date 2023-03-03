@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect} from "react";
 import Searchbar from '../../components/Searchbar/Searchbar'
 import {STATUS} from '../../helpers/Status'
-import * as API from '../../API/API'
+import {onMovieSearch} from '../../API/API'
 
 const Movies =() => {
 
@@ -23,9 +23,9 @@ const Movies =() => {
     }
 
 
-    // const handleInput = async e => {
-    //   return await onMovieSearch(e).then(res => setMovies(res.results));
-    // };
+    const handleInput = async e => {
+      return await onMovieSearch(e).then(res => setSearchFilm(res.results));
+    };
 
     // useEffect(()=>{
     //     setStatus(STATUS.pending)

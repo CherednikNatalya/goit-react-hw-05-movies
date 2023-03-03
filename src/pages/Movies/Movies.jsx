@@ -2,12 +2,12 @@ import React from 'react';
 import { useState, useEffect} from "react";
 import Searchbar from '../../components/Searchbar/Searchbar'
 import {STATUS} from '../../helpers/Status'
-import  getFilms from '../../helpers/FetchData'
+import * as API from '../../API/API'
 
 const Movies =() => {
 
   const [searchQuery, setSearchQuery] =useState('')
-  const [imgData, setImgData] =useState([''])
+  const [imgData, setImgData] =useState([])
   const [searchFilm, setSearchFilm] =useState([])
 //   const [page, setPage] =useState(1)
   const [status, setStatus] =useState(STATUS.idle)
@@ -17,7 +17,7 @@ const Movies =() => {
     const onSubmit = value => {
         setSearchQuery(value);
         // setPage(1);
-        setImgData([]);
+        // setImgData([]);
         // setTotalFind(0);
         console.log(searchQuery)
     }
@@ -25,15 +25,14 @@ const Movies =() => {
 
     useEffect(()=>{
         setStatus(STATUS.pending)
-      
-        getFilms()
+        API.getFilms()
         .then(data => {
             setSearchFilm(data.results)
           console.log(setSearchFilm)
           setStatus(STATUS.success)
         })
         .catch(error => setStatus(STATUS.error))
-      },[])
+      },[searchQuery])
 
 return (
     <Searchbar onSubmit={onSubmit}/>

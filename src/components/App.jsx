@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import {Suspense } from 'react';
 import React from 'react';
 import Navigation from '../components/Novigation/Novigation'
@@ -14,7 +14,7 @@ export const App = () => {
   return (
   
     
-      <BrowserRouter basename="/goit-react-hw-05-movies">
+      
 <Suspense fallback={<Loader />}>
 <Routes>
   <Route path='/' element={<Navigation/>}>
@@ -29,7 +29,7 @@ export const App = () => {
   </Route>
 </Routes>
 </Suspense>
-</BrowserRouter> 
+
 
 );
 };

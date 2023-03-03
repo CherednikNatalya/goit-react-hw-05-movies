@@ -5,7 +5,6 @@ import React from 'react';
 
 const TrendingList =({treadingList}) => {
 return(
-    
         <List>
         {treadingList.map(({ id, title, name }) => (
                     <Item key={id}>

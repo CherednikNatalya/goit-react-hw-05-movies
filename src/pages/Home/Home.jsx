@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-// import {Section, TrendingList } from '../Home/Home.styled.jsx'
-import getTrending from '../../helpers/FetchData'
-import {STATUS} from '../../helpers/Status'
 import Loader from '../../components/Loader/Loader'
 import React from 'react';
 import Section from '../../components/Section/Section'
 import TrendingList from '../../components/TrendingList/TrendingList'
+import {STATUS} from '../../helpers/Status'
+import * as API from '../../API/API'
+
+// const {getTrending} = require('API');
+
+
 
 const Home =() =>{
   
@@ -17,10 +20,9 @@ const[status, setStatus] = useState(STATUS.idle)
 useEffect(()=>{
   setStatus(STATUS.pending)
 
-getTrending()
+  API.getTrending()
   .then(data => {
     setTreadingList(data.results)
-    console.log(treadingList)
     setStatus(STATUS.success)
   })
   .catch(error => setStatus(STATUS.error))

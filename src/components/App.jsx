@@ -1,5 +1,6 @@
 import { Routes, Route} from 'react-router-dom';
 import {Suspense } from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import React from 'react';
 import Navigation from '../components/Novigation/Novigation'
 import Home from '../pages/Home/Home'
@@ -12,13 +13,13 @@ import Loader  from '../components/Loader/Loader'
 
 export const App = () => {
   return (
-  
+    <BrowserRouter>
     
       
 <Suspense fallback={<Loader />}>
 <Navigation>
 <Routes>
-  <Route path='' element={<Home />}>
+  <Route path='/' element={<Home />}>
 
   <Route path="movies" element={<Movies/>}/>
   <Route path="movies/:movieId" element={<MovieDetails/>}>
@@ -31,9 +32,10 @@ export const App = () => {
 </Routes>
 </Navigation>
 </Suspense>
-
+</BrowserRouter>
 
 );
 };
 
 
+// basename="goit-react-hw-05-movies"

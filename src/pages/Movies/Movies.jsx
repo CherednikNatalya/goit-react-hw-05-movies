@@ -23,16 +23,20 @@ const Movies =() => {
     }
 
 
-    useEffect(()=>{
-        setStatus(STATUS.pending)
-        API.getFilms()
-        .then(data => {
-            setSearchFilm(data.results)
-          console.log(setSearchFilm)
-          setStatus(STATUS.success)
-        })
-        .catch(error => setStatus(STATUS.error))
-      },[searchQuery])
+    // const handleInput = async e => {
+    //   return await onMovieSearch(e).then(res => setMovies(res.results));
+    // };
+
+    // useEffect(()=>{
+    //     setStatus(STATUS.pending)
+    //     API.getFilms()
+    //     .then(data => {
+    //         setSearchFilm(data.results)
+    //       console.log(setSearchFilm)
+    //       setStatus(STATUS.success)
+    //     })
+    //     .catch(error => setStatus(STATUS.error))
+    //   },[searchQuery])
 
 return (
     <Searchbar onSubmit={onSubmit}/>

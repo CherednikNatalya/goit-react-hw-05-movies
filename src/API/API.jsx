@@ -1,52 +1,31 @@
 import axios from 'axios';
 
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+const API_KEY = 'e6343f2aadc575b1d7088cbe8f702b7d';
 
-// https://api.themoviedb.org/3/trending/movie/week?api_key=b52f4a97df843a5ead1cf8ccfba387fd
+export const onMovieSearch = async request => {
+  const response = await axios.get(
+    `/search/movie?api_key=${API_KEY}&query=${request}`
+  );
+  return response.data;
+};
 
-const BASE_URL= 'https://api.themoviedb.org/3/'
-const API_KEY= 'b52f4a97df843a5ead1cf8ccfba387fd'
+export const onMovieTrending = async () => {
+  const response = await axios.get(`trending/movie/day?api_key=${API_KEY}`);
+  return response.data;
+};
 
-export const getFilms = async( text,page )=>{
-    try {
-      const response = await axios.get(`${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${text}&page=${page}&include_adult=false`)
-      return response.data
-    } catch (error) {
-      console.error(error)
-    }
-}
+export const onMovieDetails = async id => {
+  const response = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
+  return response.data;
+};
 
-export const getTrending = async()=>{
-    try {
-      const response = await axios.get(`${BASE_URL}trending/all/day?api_key=${API_KEY}`)
-      return response.data
-    } catch (error) {
-      console.error(error)
-    }
-}
+export const onMovieCasts = async id => {
+  const response = await axios.get(`/movie/${id}/credits?api_key=${API_KEY}`);
+  return response.data;
+};
 
-export const getDetails = async(id) =>{
-  try {
-    const response = await axios.get(`${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`)
-    return response.data
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-export const getCast = async(id) =>{
-  try {
-    const response = await axios.get(`${BASE_URL}movie/${id}/credits?api_key=${API_KEY}&language=en-US`)
-    return response.data
-  } catch (error) {
-   console.error(error)
-  }
-}
-
-export const getReview = async(id) =>{
-  try {
-    const response = await axios.get(`${BASE_URL}movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`)
-    return response.data
-  } catch (error) {
-    console.error(error)
-  }
-}
+export const onMovieReviews = async id => {
+  const response = await axios.get(`/movie/${id}/reviews?api_key=${API_KEY}`);
+  return response.data;
+};

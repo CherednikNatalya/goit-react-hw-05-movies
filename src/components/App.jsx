@@ -13,7 +13,7 @@ import Loader  from '../components/Loader/Loader'
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/goit-react-hw-05-movies">
     
       
 <Suspense fallback={<Loader />}>

@@ -11,7 +11,7 @@ import React from 'react';
         
         <div>
           <Link to="goit-react-hw-05-movies/" end>Home</Link>
-          {/* <Link to="goit-react-hw-05-movies/movies">Movies</Link> */}
+          <Link to="goit-react-hw-05-movies/movies">Movies</Link>
           
         </div>
       </Header>

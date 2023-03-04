@@ -3,7 +3,7 @@
 // import { Outlet } from "react-router-dom";
 import { Container, Header, Link} from '../Novigation/Novigation.styled.js';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
  const Navigation = () => {
   return (
@@ -11,8 +11,8 @@ import { NavLink } from 'react-router-dom';
       <Header>
         
         <div>
-          <Link to="" end>Home</Link>
-          <Link to="movies">Movies</Link>
+          <Link to="/goit-react-hw-05-movies" end>Home</Link>
+          <Link to="/goit-react-hw-05-movies/movies">Movies</Link>
           
         </div>
       </Header>
